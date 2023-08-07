@@ -1,0 +1,7 @@
+{
+  "name": "lama-ai",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

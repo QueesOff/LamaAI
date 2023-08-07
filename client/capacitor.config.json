@@ -1,0 +1,8 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "lama-ai",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "dist",
+  "cordova": {}
+}

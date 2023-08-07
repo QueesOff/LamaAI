@@ -1,0 +1,21 @@
+.admin{
+    max-width: 1300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 10%;
+}
+
+.btn{
+    width: 90px;
+    height: 40px;
+    padding: 5px;
+    font-size: 14px;
+    background-color: #39cd52;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
