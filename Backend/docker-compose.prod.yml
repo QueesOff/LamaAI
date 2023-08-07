@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:14.7
+    env_file:
+      - .env
+    volumes:
+      - db:/var/lib/postgresql/data
+
+  api:
+    build:
+      dockerfile: ./docker/backend/Dockerfile
+      context: .
+    volumes:
+      - media:/app/media
+      - storage:/app/storage
+    entrypoint: ./docker/backend/asgi-entrypoint.sh
+    env_file:
+      - .env
+    expose:
+      - 8000
+    depends_on:
+      - db
+
+  nginx:
+    build:
+      dockerfile: Dockerfile
+      context: ./docker/nginx
+    env_file:
+      - .env
+    volumes:
+      - media:/app/media
+    depends_on:
+      - api
+    ports:
+      - "80:80"
+
+volumes:
+  media:
+  db:
+  storage:
